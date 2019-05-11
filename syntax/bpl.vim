@@ -37,6 +37,11 @@ syn keyword bplType cstring
 syn keyword bplType bson
 syn keyword bplType nil
 
+" Other syntax {{{2
+" doc is like self/this
+syn keyword bplDoc doc
+syn keyword bplBoolean true false
+
 syn match  bplEscapeError   display contained /\\./
 syn match  bplEscape        display contained /\\\([nrt0\\'"]\|x\x\{2}\)/
 syn match  bplEscapeUnicode display contained /\\\(u\%(\x*\)\{4}\|U\%(\x*\)\{8}\)/
@@ -58,6 +63,8 @@ hi def link bplEscapeUnicode bplEscape
 hi def link bplEscapeError Error
 hi def link bplStringContinuation Special
 hi def link bplString String
+hi def link bplBoolean Boolean
+hi def link bplDoc Constant
 hi def link bplKeyword Keyword
 hi def link bplConditional Conditional
 hi def link bplLabel Label
