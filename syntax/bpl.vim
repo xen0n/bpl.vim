@@ -48,6 +48,9 @@ syn match  bplEscapeUnicode display contained /\\\(u\%(\x*\)\{4}\|U\%(\x*\)\{8}\
 syn match  bplStringContinuation display contained /\\\n\s*/
 syn region bplString      start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=bplEscape,bplEscapeUnicode,bplEscapeError,bplStringContinuation,@Spell
 
+syn match bplDecNumber display "\<[0-9][0-9]*"
+syn match bplHexNumber display "\<0x[a-fA-F0-9]\+"
+
 syn region bplCommentLine start="//" end="$" contains=bplTodo,@Spell
 
 syn keyword bplTodo contained TODO FIXME XXX NB NOTE
@@ -58,11 +61,15 @@ syn keyword bplTodo contained TODO FIXME XXX NB NOTE
 syn region bplFoldBraces start="{" end="}" transparent fold
 
 " Default highlighting {{{1
+hi def link bplDecNumber bplNumber
+hi def link bplHexNumber bplNumber
+
 hi def link bplEscape Special
 hi def link bplEscapeUnicode bplEscape
 hi def link bplEscapeError Error
 hi def link bplStringContinuation Special
 hi def link bplString String
+hi def link bplNumber Number
 hi def link bplBoolean Boolean
 hi def link bplDoc Constant
 hi def link bplKeyword Keyword
