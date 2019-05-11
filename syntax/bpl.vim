@@ -18,12 +18,14 @@ syn keyword bplLabel default
 
 syn keyword bplAssert  assert
 syn keyword bplPanic   fatal
+syn keyword bplKeyword return
 syn keyword bplKeyword dump
 syn keyword bplKeyword skip
 syn keyword bplKeyword let
 syn keyword bplKeyword eval
 " TODO: do <qlang expr>
 syn keyword bplKeyword do
+syn keyword bplStorage global
 
 " Built-in types {{{2
 syn keyword bplType int8 uint8 char byte
@@ -81,6 +83,7 @@ hi def link bplPanic PreCondit
 
 hi def link bplType Type
 hi def link bplTodo Todo
+hi def link bplStorage StorageClass
 
 syn sync minlines=200
 syn sync maxlines=500
